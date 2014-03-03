@@ -3,9 +3,6 @@ var path = Npm.require('path');
 var sass = Npm.require('node-sass');
 var Future = Npm.require('fibers/future');
 
-/**
- * get all file .sass, run each file
- */
 Plugin.registerSourceHandler("scss", function (compileStep) {
   
   if (! compileStep.archMatches('browser')) {

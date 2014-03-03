@@ -1,8 +1,8 @@
 {
   "name": "sass",
-  "description": "SASS for Meteor",
+  "description": "SASS packages for Meteor ",
   "homepage": "https://github.com/particle4dev/meteor-sass",
-  "author": "Le Hoang (particle4dev@gmail.com)",
+  "author": "Le Hoang (https://github.com/particle4dev)",
   "version": "0.0.1",
   "git": "https://github.com/particle4dev/meteor-sass.git"
 }
