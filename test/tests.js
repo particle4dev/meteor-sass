@@ -11,7 +11,7 @@ Tinytest.add("sass - presence", function(test) {
 
   // test @import
   var i = d.div.getElementsByClassName('example');
-  test.equal(getStyleProperty(i[0], 'color'), "rgb(255, 0, 0)");
+  test.equal(getStyleProperty(i[0], 'color'), "rgb(0, 128, 0)");
 
   d.kill();
 });
