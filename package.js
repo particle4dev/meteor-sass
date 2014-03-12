@@ -14,5 +14,12 @@ Package._transitional_registerBuildPlugin({
 Package.on_test(function (api) {
   api.use(['test-helpers', 'tinytest', 'sass', 'spark'], ['client']);
 
-  api.add_files(['test/tests.scss', 'test/empty-sass.scss', 'test/tests.js'], ['client']);
+  api.add_files([
+    'test/tests.scss',
+    'test/mixin.scss',
+    'test/empty-sass.scss',
+    'test/extend.scss',
+    'test/operators.scss',
+    'test/tests.js'
+  ], ['client']);
 });

@@ -1,0 +1,20 @@
+.messageExtends {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.successExtends {
+  @extend .message;
+  border-color: green;
+}
+
+.errorExtends {
+  @extend .message;
+  border-color: red;
+}
+
+.warningExtends {
+  @extend .message;
+  border-color: yellow;
+}
