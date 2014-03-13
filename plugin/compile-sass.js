@@ -1,7 +1,6 @@
 var fs = Npm.require('fs');
 var path = Npm.require('path');
 var sass = Npm.require('node-sass');
-var Future = Npm.require('fibers/future');
 
 function compile(compileStep) {
   
