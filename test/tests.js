@@ -49,6 +49,16 @@ Tinytest.add("sass - operators", function(test) {
   d.kill();
 });
 
+Tinytest.add("sass - sass files", function(test) {
+  var d = OnscreenDiv(Meteor.render(function() {
+    return '<div class="parent"><div class="child"></div></div>';
+  }));
+  d.node().style.display = 'block';
+  var i = d.div.getElementsByClassName('child');
+  test.equal(getStyleProperty(i[0], 'color'), "rgb(204, 204, 204)");
+  d.kill();
+});
+
 Tinytest.add("sass - mixin", function(test) {
   var d = OnscreenDiv(Meteor.render(function() {
     return '<div class="boxMixin"></div>';

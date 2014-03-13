@@ -3,7 +3,7 @@ var path = Npm.require('path');
 var sass = Npm.require('node-sass');
 var Future = Npm.require('fibers/future');
 
-Plugin.registerSourceHandler("scss", function (compileStep) {
+function compile(compileStep) {
   
   if (! compileStep.archMatches('browser')) {
     return;
@@ -30,4 +30,7 @@ Plugin.registerSourceHandler("scss", function (compileStep) {
     path: filename,
     data: css
   });
-});
+};
+
+Plugin.registerSourceHandler("scss", compile);
+Plugin.registerSourceHandler("sass", compile);
