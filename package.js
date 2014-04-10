@@ -8,11 +8,11 @@ Package._transitional_registerBuildPlugin({
   sources: [
     'plugin/compile-sass.js'
   ],
-  npmDependencies: {"node-sass": "0.8.3"}
+  npmDependencies: {"node-sass": "0.8.4"}
 });
 
 Package.on_test(function (api) {
-  api.use(['test-helpers', 'tinytest', 'sass'], ['client']);
+  api.use(['test-helpers', 'tinytest', 'jquery', 'sass', 'templating'], ['client']);
 
   api.add_files([
     'test/tests.scss',
@@ -21,6 +21,7 @@ Package.on_test(function (api) {
     'test/extend.scss',
     'test/operators.scss',
     'test/sass.sass',
+    'test/sass_tests.html',
     'test/tests.js'
   ], ['client']);
 });

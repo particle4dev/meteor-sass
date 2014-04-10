@@ -1,7 +1,6 @@
 ###Todo
 
-blaze
-more test
+Support meteor v0.8
 
 ###Demo
 
