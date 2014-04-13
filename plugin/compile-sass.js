@@ -16,8 +16,9 @@ function compile(compileStep) {
       includePaths: [ path.dirname(compileStep._fullInputPath) ],
     });
   } catch (e) {
+    var message = e.message ? e.message : e.toString();
     compileStep.error({
-      message: "Sass compiler error: " + e.message,
+      message: "Sass compiler error >> " + message,
       sourcePath: e.filename || compileStep.inputPath,
       line: e.line - 1,
       column: e.column + 1
