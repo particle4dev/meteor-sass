@@ -1,6 +1,7 @@
 ###Todo
-
-Support meteor v0.8
+Add packages to your project by using command
+###
+mrt add sass
 
 ###Demo
 
