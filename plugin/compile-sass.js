@@ -19,6 +19,7 @@ function compile(compileStep) {
       data: source,
       outputStyle: 'compressed',
       includePaths: [ path.dirname(compileStep._fullInputPath) ],
+      sourceComments: 'none'
     });
   } catch (e) {
     var message = e.message ? e.message : e.toString();
