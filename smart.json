@@ -3,6 +3,6 @@
   "description": "SASS packages for Meteor ",
   "homepage": "https://github.com/particle4dev/meteor-sass",
   "author": "Le Hoang (https://github.com/particle4dev)",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "git": "https://github.com/particle4dev/meteor-sass.git"
 }

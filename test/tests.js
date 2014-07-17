@@ -24,7 +24,7 @@ Tinytest.add("sass - presence", function(test) {
   // test @import
   var i = p.find('.example');
   test.equal(i.css('color'), "rgb(0, 128, 0)");
-
+  test.equal(i.css('display'), "inline-block");
   d.kill();
 });
 
@@ -57,15 +57,6 @@ Tinytest.add("sass - operators", function(test) {
   test.equal(i.css('float'), "right", 'operators fail');
   test.equal(i.css('font-size'), "18px", 'operators fail');
 
-  d.kill();
-});
-
-Tinytest.add("sass - sass files", function(test) {
-  var d = OnscreenDiv(Template.sassFiles);
-  d.node().css('display', 'block');
-
-  var i = d.node().find('.child');
-  test.equal(i.css('color'), "rgb(204, 204, 204)");
   d.kill();
 });
 

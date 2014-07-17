@@ -1,4 +1,6 @@
-@import "empty-sass.scss";
+@import "empty-sass";
+@import "import";
+@import "submodule/subfile";
 
 $font-stack:    Helvetica, sans-serif;
 $primary-color: #ccc;
