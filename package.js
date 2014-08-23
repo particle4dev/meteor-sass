@@ -12,15 +12,30 @@ Package._transitional_registerBuildPlugin({
 });
 
 Package.on_test(function (api) {
-  api.use(['test-helpers', 'tinytest', 'jquery', 'sass', 'templating'], ['client']);
+  api.use(['test-helpers', 'tinytest', 'jquery', 'templating', 'sass']);
 
   api.add_files([
-    'test/tests.scss',
-    'test/mixin.scss',
-    'test/empty-sass.scss',
-    'test/extend.scss',
-    'test/operators.scss',
-    'test/sass_tests.html',
-    'test/tests.js'
-  ], ['client']);
+    'test/oscreenDiv.js',
+
+    'test/presence/template.html',
+    'test/presence/style.scss',
+    'test/presence/test.js',
+
+    'test/extend/template.html',
+    'test/extend/style.scss',
+    'test/extend/test.js',
+
+    'test/operators/template.html',
+    'test/operators/style.scss',
+    'test/operators/test.js',
+
+    'test/mixin/template.html',
+    'test/mixin/style.scss',
+    'test/mixin/test.js',
+
+    'test/import/template.html',
+    'test/import/style.scss',
+    'test/import/test.js',
+
+  ], 'client');
 });
