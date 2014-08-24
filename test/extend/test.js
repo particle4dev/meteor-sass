@@ -16,5 +16,5 @@ Tinytest.add("sass - extend", function(test) {
   var warning = d.node().find('.warningExtends');
   test.equal(warning.css('border-color'), "rgb(255, 255, 0)", 'warning fail');
   
-  // d.kill();
+  d.kill();
 });
