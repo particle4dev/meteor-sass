@@ -4,7 +4,7 @@ var sass = Npm.require('node-sass');
 
 function compile(compileStep) {
   // XXX annoying that this is replicated in .css, .less, and .styl
-  if (! compileStep.archMatches('web')) {
+  if (! compileStep.archMatches('browser')) {
     // XXX in the future, might be better to emit some kind of a
     // warning if a stylesheet is included on the server, rather than
     // silently ignoring it. but that would mean you can't stick .css
