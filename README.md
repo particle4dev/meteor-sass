@@ -20,8 +20,8 @@ Edit your smart.json
 ###
 Open your terminal and type:
 ###
-mrt update
-meteor add sass
+    mrt update
+    meteor add sass
 ###
 
 ###Best Practices
