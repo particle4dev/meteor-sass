@@ -1,6 +1,13 @@
 Package.describe({
-  summary: "SASS for meteor"
+  summary: "SASS for meteor",
+  version: "0.2.3.1",
+  git: "https://github.com/particle4dev/meteor-sass.git"
 });
+
+Package.onUse(function (api) {
+  api.versionsFrom('0.9.0');
+});
+
 // meteor test-packages ./
 Package._transitional_registerBuildPlugin({
   name: "compileSass",
@@ -12,7 +19,7 @@ Package._transitional_registerBuildPlugin({
 });
 
 Package.on_test(function (api) {
-  api.use(['test-helpers', 'tinytest', 'jquery', 'templating', 'sass']);
+  api.use(['test-helpers', 'tinytest', 'jquery', 'templating', "particle4dev:sass"]);
 
   api.add_files([
     'test/oscreenDiv.js',
