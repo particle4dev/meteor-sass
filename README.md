@@ -6,17 +6,8 @@ Meteor v0.9.0
     meteor add particle4dev:sass
 ###
 Meteor 0.8.3
-
-Edit your smart.json
 ###
-    "packages": {
-        ...
-        "sass": {
-            "git": "https://github.com/particle4dev/meteor-sass.git",
-            "tag": "v0.2.1"
-        }
-        ...
-    }
+ mrt add sass
 ###
 Open your terminal and type:
 ###
