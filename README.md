@@ -1,19 +1,16 @@
 ###Todo
 Add packages to your project by using command
 
-Meteor v0.9.0
+#### Meteor v0.9.0
 ###
     meteor add particle4dev:sass
 ###
-Meteor 0.8.3
+
+#### Meteor 0.8.3
 ###
- mrt add sass
+    mrt add sass
 ###
-Open your terminal and type:
-###
-    mrt update
-    meteor add sass
-###
+
 
 ###Best Practices
     http://thesassway.com/beginner/how-to-structure-a-sass-project
