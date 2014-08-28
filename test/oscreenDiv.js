@@ -1,3 +1,6 @@
+// issue with Firefox 
+// http://stackoverflow.com/questions/15497246/jquery-csspadding-issue-with-firefox
+
 OnscreenDiv = function(tmp){
   var div = document.createElement('div');
   Blaze.render(tmp).attach(div);

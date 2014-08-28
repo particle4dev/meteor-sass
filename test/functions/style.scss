@@ -1,0 +1,21 @@
+@function -em($a, $b) {
+  @return #{($a + $b) + 'em'};
+}
+
+@function -pc($a, $b) {
+  @return #{($a + $b) + 'px'};
+}
+
+.function-test {
+  margin: -pc(40, 100);
+  font-size: -em(1, 1);
+}
+
+/**
+ * colors
+ */
+$base-color: red;
+
+.color-test {
+border: 1px solid darken($base-color, 20%);
+}

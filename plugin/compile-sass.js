@@ -17,7 +17,7 @@ function compile(compileStep) {
   var fullFileName = compileStep.inputPath.replace(/^.*[\\\/]/, '');
   if(fullFileName.charAt(0) == "_")
     return;
-  var source = compileStep.read().toString('utf8');
+  // var source = compileStep.read().toString('utf8');
   var css;
   try {
     css = sass.renderSync({
@@ -37,11 +37,13 @@ function compile(compileStep) {
     });
     return;
   }
+
   var filename = compileStep.inputPath.replace(/\.[^\.]+$/, '.css');
   compileStep.addStylesheet({
     path: filename,
     data: css
   });
+
 };
 
 Plugin.registerSourceHandler("scss", compile);

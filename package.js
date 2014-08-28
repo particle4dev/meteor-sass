@@ -1,6 +1,6 @@
 Package.describe({
   summary: "SASS for meteor",
-  version: "0.2.5",
+  version: "0.2.6",
   name: "particle4dev:sass",
   git: "https://github.com/particle4dev/meteor-sass.git"
 });
@@ -36,6 +36,10 @@ Package.on_test(function (api) {
     'test/operators/template.html',
     'test/operators/style.scss',
     'test/operators/test.js',
+
+    'test/functions/template.html',
+    'test/functions/style.scss',
+    'test/functions/test.js',
 
     'test/mixin/template.html',
     'test/mixin/style.scss',
