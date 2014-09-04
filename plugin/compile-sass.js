@@ -1,6 +1,11 @@
+// FIXME: open source map when node sass is 0.9.4
+
+
 var fs = Npm.require('fs');
 var path = Npm.require('path');
 var sass = Npm.require('node-sass');
+var Future = Npm.require('fibers/future');
+var Fiber = Npm.require('fibers');
 
 function compile(compileStep) {
   // XXX annoying that this is replicated in .css, .less, and .styl
@@ -17,16 +22,25 @@ function compile(compileStep) {
   var fullFileName = compileStep.inputPath.replace(/^.*[\\\/]/, '');
   if(fullFileName.charAt(0) == "_")
     return;
-  // var source = compileStep.read().toString('utf8');
-  var css;
+  var source = compileStep.read().toString('utf8'),
+  css,
+  fir = Fiber.current,
+  sourceMap;
   try {
-    css = sass.renderSync({
+    sass.render({
       //data: source,
       file: compileStep._fullInputPath,
       outputStyle: 'compressed',
-      includePaths: [ path.dirname(compileStep._fullInputPath) ],
-      sourceComments: 'none'
+      includePaths: [ path.dirname(compileStep._fullInputPath) ], // for @import
+      // sourceComments: 'map',
+      // sourceMap: null,
+      success: function(c, s){
+        css = c.replace(/sourceMappingURL=null/g,'');
+        // sourceMap = JSON.parse(s);
+        fir.run();
+      }
     });
+    Fiber.yield();
   } catch (e) {
     var message = e.message ? e.message : e.toString();
     compileStep.error({
@@ -37,14 +51,18 @@ function compile(compileStep) {
     });
     return;
   }
-
-  var filename = compileStep.inputPath.replace(/\.[^\.]+$/, '.css');
+  // source map
+  // https://github.com/meteor/meteor/blob/devel/packages/less/plugin/compile-less.js#L54
+  // https://github.com/sass/node-sass#sourcemap
+  // sourceMap = JSON.stringify(sourceMap);
   compileStep.addStylesheet({
-    path: filename,
-    data: css
+    path: compileStep.inputPath + ".css",
+    data: css,
+    // sourceMap: sourceMap
   });
 
 }
 
 Plugin.registerSourceHandler("scss", compile);
+// https://github.com/sass/libsass/issues/16
 Plugin.registerSourceHandler("sass", compile);

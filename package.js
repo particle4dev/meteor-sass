@@ -1,6 +1,6 @@
 Package.describe({
   summary: "SASS for meteor",
-  version: "0.2.6",
+  version: "0.2.7", // when meteor is 1.0
   name: "particle4dev:sass",
   git: "https://github.com/particle4dev/meteor-sass.git"
 });

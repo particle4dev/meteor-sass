@@ -5,5 +5,5 @@ Tinytest.add("sass - sass", function(test) {
   var p = d.node().find('.test-sass');
   test.equal(p.css('color'), "rgb(204, 204, 204)");
 
-  //d.kill();
+  d.kill();
 });
