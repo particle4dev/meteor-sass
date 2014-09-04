@@ -44,6 +44,7 @@ function compile(compileStep) {
     data: css
   });
 
-};
+}
 
 Plugin.registerSourceHandler("scss", compile);
+Plugin.registerSourceHandler("sass", compile);

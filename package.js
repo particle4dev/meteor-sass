@@ -49,5 +49,9 @@ Package.on_test(function (api) {
     'test/import/style.scss',
     'test/import/test.js',
 
+    'test/sass/template.html',
+    'test/sass/style.sass',
+    'test/sass/test.js',
+
   ], 'client');
 });
