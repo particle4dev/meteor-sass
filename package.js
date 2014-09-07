@@ -20,7 +20,7 @@ Package._transitional_registerBuildPlugin({
 });
 
 Package.on_test(function (api) {
-  api.use(['test-helpers', 'tinytest', 'jquery', 'templating', "particle4dev:sass"]);
+  api.use(['test-helpers', 'tinytest', 'jquery', 'templating', 'blaze', 'ui', "particle4dev:sass"]);
 
   api.add_files([
     'test/oscreenDiv.js',

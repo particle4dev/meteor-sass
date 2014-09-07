@@ -3,7 +3,7 @@
 
 OnscreenDiv = function(tmp){
   var div = document.createElement('div');
-  Blaze.render(tmp).attach(div);
+  Blaze.render(tmp, div);
   div.style.display = 'block';
   document.body.appendChild(div);
   return {
