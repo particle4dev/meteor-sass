@@ -24,7 +24,7 @@ function compile(compileStep) {
     return;
   var source = compileStep.read().toString('utf8'),
   css,
-  fir = Fiber.current,
+  fir = new Future(),
   sourceMap;
   try {
     sass.render({
@@ -37,10 +37,13 @@ function compile(compileStep) {
       success: function(c, s){
         css = c.replace(/sourceMappingURL=null/g,'');
         // sourceMap = JSON.parse(s);
-        fir.run();
+        fir.return();
+      },
+      error: function(err){
+        fir.throw(err);
       }
     });
-    Fiber.yield();
+    fir.wait();
   } catch (e) {
     var message = e.message ? e.message : e.toString();
     compileStep.error({
