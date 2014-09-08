@@ -1,5 +1,5 @@
 // FIXME: open source map when node sass is 0.9.4
-
+// https://github.com/sass/node-sass/issues/337#issuecomment-45845480
 
 var fs = Npm.require('fs');
 var path = Npm.require('path');
@@ -22,8 +22,8 @@ function compile(compileStep) {
   var fullFileName = compileStep.inputPath.replace(/^.*[\\\/]/, '');
   if(fullFileName.charAt(0) == "_")
     return;
-  var source = compileStep.read().toString('utf8'),
-  css,
+  // var source = compileStep.read().toString('utf8');
+  var css,
   fir = new Future(),
   sourceMap;
   try {
