@@ -7,7 +7,7 @@ var sass = Npm.require('node-sass');
 var Future = Npm.require('fibers/future');
 var Fiber = Npm.require('fibers');
 
-function compile(compileStep) {
+var compile = function(compileStep) {
   // XXX annoying that this is replicated in .css, .less, and .styl
   if (! compileStep.archMatches('web')) {
     // XXX in the future, might be better to emit some kind of a
@@ -66,6 +66,6 @@ function compile(compileStep) {
 
 }
 
-Plugin.registerSourceHandler("scss", compile);
+Plugin.registerSourceHandler("scss", {archMatching: 'web'}, compile);
 // https://github.com/sass/libsass/issues/16
-Plugin.registerSourceHandler("sass", compile);
+Plugin.registerSourceHandler("sass", {archMatching: 'web'}, compile);
