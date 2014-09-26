@@ -1,6 +1,3 @@
-// FIXME: open source map when node sass is 0.9.4
-// https://github.com/sass/node-sass/issues/337#issuecomment-45845480
-
 var fs = Npm.require('fs');
 var path = Npm.require('path');
 var sass = Npm.require('node-sass');
@@ -32,11 +29,11 @@ var compile = function(compileStep) {
       file: compileStep._fullInputPath,
       outputStyle: 'compressed',
       includePaths: [ path.dirname(compileStep._fullInputPath) ], // for @import
-      // sourceComments: 'map',
-      // sourceMap: null,
+      sourceComments: 'map',
+      sourceMap: null,
       success: function(c, s){
-        css = c.replace(/sourceMappingURL=null/g,'');
-        // sourceMap = JSON.parse(s);
+        css = c.replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g,'');
+        sourceMap = JSON.parse(s);
         fir.return();
       },
       error: function(err){
@@ -57,11 +54,11 @@ var compile = function(compileStep) {
   // source map
   // https://github.com/meteor/meteor/blob/devel/packages/less/plugin/compile-less.js#L54
   // https://github.com/sass/node-sass#sourcemap
-  // sourceMap = JSON.stringify(sourceMap);
+  sourceMap = JSON.stringify(sourceMap);
   compileStep.addStylesheet({
     path: compileStep.inputPath + ".css",
     data: css,
-    // sourceMap: sourceMap
+    sourceMap: sourceMap
   });
 
 }
