@@ -31,9 +31,11 @@ var compile = function(compileStep) {
       includePaths: [ path.dirname(compileStep._fullInputPath) ], // for @import
       sourceComments: 'map',
       sourceMap: null,
-      success: function(c, s){
-        css = c.replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g,'');
-        sourceMap = JSON.parse(s);
+      success: function(result){
+        // css = c.replace(/\/\*.+?\*\/|\/\/.*(?=[\n\r])/g,'');
+        // sourceMap = JSON.parse(s);
+        css = result.css;
+        sourceMap = result.map;
         fir.return();
       },
       error: function(err){

@@ -1,6 +1,6 @@
 Package.describe({
   summary: "SASS for meteor",
-  version: "1.1.0",
+  version: "1.2.0",
   name: "particle4dev:sass",
   git: "https://github.com/particle4dev/meteor-sass.git"
 });
@@ -11,12 +11,12 @@ Package.onUse(function (api) {
 
 // meteor test-packages ./
 Package._transitional_registerBuildPlugin({
-  name: "compileSass",
+  name: "compilesassplugin",
   use: [],
   sources: [
-    'plugin/compile-sass.js'
+    'plugin/compile.sass.plugin.js'
   ],
-  npmDependencies: {"node-sass": "1.2.3"}
+  npmDependencies: {"node-sass": "2.0.0-beta"}
 });
 
 Package.on_test(function (api) {
