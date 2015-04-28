@@ -1,6 +1,6 @@
 Package.describe({
   summary: "SASS for meteor",
-  version: "2.0.1",
+  version: "2.1.1",
   name: "particle4dev:sass",
   git: "https://github.com/particle4dev/meteor-sass.git"
 });
@@ -16,7 +16,7 @@ Package._transitional_registerBuildPlugin({
   sources: [
     'plugin/compile.sass.plugin.js'
   ],
-  npmDependencies: {"node-sass": "2.0.1"}
+  npmDependencies: {"node-sass": "2.1.1"}
 });
 
 Package.on_test(function (api) {
