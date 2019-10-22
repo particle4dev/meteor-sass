@@ -1,4 +1,6 @@
-###Todo
+WARNING: This project is outdated and not maintained anymore.
+
+### Todo
 Add packages to your project by using command
 
 #### Meteor v0.9.0
